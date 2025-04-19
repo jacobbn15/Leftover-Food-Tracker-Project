@@ -1,8 +1,9 @@
 CXX = g++
 CXXFLAGS = -std=c++17 -Wall -Wextra
 
-SRC = LeftOverRecord.cpp LeftOverReport.cpp LeftOverTracker.cpp
+SRC = LeftOverRecord.cc LeftoverReport.cc LeftOverTracker.cpp
 OBJ = $(SRC:.cpp=.o)
+OBJ := $(OBJ:.cc=.o)
 EXEC = leftover_tracker
 
 # Rule for building everything
@@ -12,7 +13,10 @@ all: build
 build: $(OBJ)
 	$(CXX) $(OBJ) -o $(EXEC)
 
-# Rule for creating object files from cpp files
+# Rule for creating object files from cc/cpp files
+%.o: %.cc
+	$(CXX) $(CXXFLAGS) -c $< -o $@
+
 %.o: %.cpp
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
