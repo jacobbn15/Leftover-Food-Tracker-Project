@@ -7,10 +7,10 @@
 
 #include "LeftoverReport.h"
 
-LeftOverReport::LeftoverReport(const std::vector<LeftoverRecord>& records)
+LeftoverReport::LeftoverReport(const std::vector<LeftoverRecord>& records)
     : records(records) {}
 
-double LeftOverReport::getTotalFoodWasteCost() const { return 0.0; }
+double LeftoverReport::getTotalFoodWasteCost() const { return 0.0; }
 std::string LeftoverReport::getMostCommonWasteFood() const { return ""; }
 std::string LeftoverReport::getMostWasteProducingMeal() const { return ""; }
 std::string LeftoverReport::getMostCommonLeftoverReason() const { return ""; }
